@@ -3,6 +3,7 @@
 #include "Player.h"
 #include <string>
 #include "role.h"
+#include "ODivision.h"
 class Division
 {
 public:
@@ -17,6 +18,7 @@ public:
 	std::string getBattletag(int index);
 	Role getRole(int index);
 	double getAverageSR();
+	Odivision teamSort();
 	//all search functions return -1 if nothing is found, as well as printing a message
 	int search(int sr);														//searches for a player with that sr
 	std::vector<int> searchAll(int sr);										//searches for all players with that sr
