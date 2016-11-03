@@ -4,18 +4,25 @@
 #include <iostream>
 #include "Parse.h"
 #include "Division.h"
+#include "ODivision.h"
 using namespace std;
 
-const string fileName = "Players.csv";					//This is where you put the name of the .csv file you want read.
+const string fileName = "Players.csv";						//This is where you put the name of the .csv file you want read.
 															//I tried to make it take it as a command line input, but that was too hard
 int main()													//instructions for how the file must be formatted are in parse.h and parse.cpp
 {
-	Division europe;
-	Division NA;
-	int count = 307;											//the exact number or players in the .csv file.
+	Division europe("Europe");
+	Division NA("North America");
+	int count = 465;										//the exact number or players in the .csv file.
 	parse(europe, NA, count, fileName);
 	NA.tallyRoles();
-	cout << NA.getName(NA.search(2100, 2200, ROLE_ANY)) << '\n';
+	europe.tallyRoles();
+	ODivision sortedEurope = europe.teamSort(0);
+	ODivision sortedNA = NA.teamSort(0);
+	cout << "The average sr for NA is "<< NA.getAverageSR() << '\n';
+	cout << "The average sr for Europe is " << europe.getAverageSR() << '\n';
+	sortedNA.printToFile("NA Teams.csv");
+	sortedEurope.printToFile("Europe Teams.csv");
     return 0;
 }
 

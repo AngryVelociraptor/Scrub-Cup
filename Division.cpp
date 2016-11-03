@@ -5,6 +5,10 @@
 #include "role.h"
 #include "Division.h"
 using namespace std;
+Division::Division(string name) 
+{
+	m_name = name;
+}
 double Division::getAverageSR()
 {
 	double total = 0;
@@ -159,16 +163,16 @@ int Division::countRole(Role role)
 	switch (role)
 	{
 	case ROLE_DPS:
-		cout << "There are " << count << " DPS players on NA\n";
+		cout << "There are " << count << " DPS players on " << m_name << "\n";
 		break;
 	case ROLE_TANK:
-		cout << "There are " << count << " Tank players on NA\n";
+		cout << "There are " << count << " Tank players on " << m_name << "\n";
 		break;
 	case ROLE_SUPPORT:
-		cout << "There are " << count << " Support players on NA\n";
+		cout << "There are " << count << " Support players on " << m_name << "\n";
 		break;
 	case ROLE_ANY:
-		cout << "There are " << count << " Any players on NA\n";
+		cout << "There are " << count << " Any players on " << m_name << "\n";
 		break;
 	}
 	return count;

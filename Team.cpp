@@ -5,7 +5,7 @@ double Team::getAverage()
 {
     double total = 0;
     int count = 0;
-    for (int i = 0; i < m_players.size; ++i)
+    for (int i = 0; i < m_players.size(); ++i)
     {
         if (m_players[i].m_sr)
         {
