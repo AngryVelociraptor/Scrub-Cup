@@ -107,7 +107,7 @@ int Division::search(int lower, int upper)								//searches for a player that i
 {
 	for (int i = 0; i < m_division.size(); ++i)
 	{
-		if (m_division[i].m_sr <= upper && m_division[i].m_sr >= upper)
+		if (m_division[i].m_sr <= upper && m_division[i].m_sr >= lower)
 			return i;
 	}
 	cout << "None found within that range.\n";
@@ -117,7 +117,7 @@ int Division::search(int lower, int upper, Role role)
 {
 	for (int i = 0; i < m_division.size(); ++i)
 	{
-		if ((m_division[i].m_sr <= upper && m_division[i].m_sr >= upper) && m_division[i].m_role == role)
+		if ((m_division[i].m_sr <= upper && m_division[i].m_sr >= lower) && m_division[i].m_role == role)
 		{
 			return i;
 		}
@@ -132,7 +132,7 @@ vector<int> Division::searchAll(int lower, int upper, Role role)		//same as abov
 	solutions.resize(count);
 	for (int i = 0; i < m_division.size(); ++i)
 	{
-		if (m_division[i].m_sr <= upper && m_division[i].m_sr >= upper && m_division[i].m_role == role)
+		if (m_division[i].m_sr <= upper && m_division[i].m_sr >= lower && m_division[i].m_role == role)
 		{
 			count++;
 			solutions.resize(count);
