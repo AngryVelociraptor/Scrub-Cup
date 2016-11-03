@@ -11,4 +11,5 @@ public:
 	{
 		m_players.resize(5);
 	}
+	double getAverage();
 };
