@@ -6,6 +6,7 @@ third must be email addresses,
 fourth must be continent,
 fifth must be SR,
 sixth must be role.
+7th must be second choice role.
 THE MUST BE NO DATA FURTHER DOWN THAN THE PLAYERS
 */
 #include <vector>
@@ -35,6 +36,8 @@ void parse(Division &europe, Division &NA, int count, string fileName) //Count i
 	int sr;
 	string roleString;
 	Role role;
+	string role2string;
+	Role role2
 	string region;
 
 	for (int i = 1; i <= count; ++i)
@@ -56,6 +59,17 @@ void parse(Division &europe, Division &NA, int count, string fileName) //Count i
 			role = ROLE_ANY;
 		else
 			cout << "Something was wrong with the role choice of player number " << i << ". \n";
+		getline(file, roleString2);
+		if (roleString == "DPS")
+			role2 = ROLE_DPS;
+		else if (roleString == "Tank")
+			role2 = ROLE_TANK;
+		else if (roleString == "Support")
+			role2 = ROLE_SUPPORT;
+		else if (roleString == "any")
+			role2 = ROLE_ANY;
+		else
+			cout << "Something was wrong with the second role choice of player number " << i << ". \n";
 		if (region == "Europe")
 		{							//Assigns the data to a Player with the index i in the correct vector.
 			europe.m_division[europeCounter].m_name = name;
@@ -63,6 +77,7 @@ void parse(Division &europe, Division &NA, int count, string fileName) //Count i
 			europe.m_division[europeCounter].m_email = email;
 			europe.m_division[europeCounter].m_sr = sr;
 			europe.m_division[europeCounter].m_role = role;
+			europe.m_division[europeCounter].m_role2 = role2
 			europeCounter++;
 		}
 		else if (region == "Americas")
@@ -73,6 +88,7 @@ void parse(Division &europe, Division &NA, int count, string fileName) //Count i
 			NA.m_division[NACounter].m_email = email;
 			NA.m_division[NACounter].m_sr = sr;
 			NA.m_division[NACounter].m_role = role;
+			NA.m_division[NACounter].m_role2 = role2;
 			NACounter++;
 		}
 	}
