@@ -6,7 +6,7 @@
 #include "Division.h"
 using namespace std;
 
-const string fileName = "Players.csv";						//This is where you put the name of the .csv file you want read.
+const string fileName = "Players.csv";					//This is where you put the name of the .csv file you want read.
 															//I tried to make it take it as a command line input, but that was too hard
 int main()													//instructions for how the file must be formatted are in parse.h and parse.cpp
 {

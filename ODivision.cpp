@@ -30,7 +30,7 @@ bool ODivision::printToFile()
 	}
 	for (int i = 0; i < m_ODivision.size(); ++i)
 	{
-		for (j = 0; j < m_ODivision[i].m_players.size(); ++j)
+		for (int j = 0; j < m_ODivision[i].m_players.size(); ++j)
 		{
 			outf << m_ODivision[i].m_players[j].m_name << ','
 				<< m_ODivision[i].m_players[j].m_battletag << ','
@@ -51,7 +51,7 @@ bool ODivision::printToFile(string filename)
 	}
 	for (int i = 0; i < m_ODivision.size(); ++i)
 	{
-		for (j = 0; j < m_ODivision[i].m_players.size(); ++j)
+		for (int j = 0; j < m_ODivision[i].m_players.size(); ++j)
 		{
 			outf << m_ODivision[i].m_players[j].m_name << ','
 				<< m_ODivision[i].m_players[j].m_battletag << ','

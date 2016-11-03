@@ -5,6 +5,10 @@
 class Team
 {
 public:
-	std::vector<Player> m_players = { 0, 0, 0, 0, 0, 0 };
+	std::vector<Player> m_players;
 	std::string m_name;
+	Team()
+	{
+		m_players.resize(5);
+	}
 };
