@@ -5,7 +5,9 @@
 #include "Parse.h"
 #include "Division.h"
 #include "ODivision.h"
+#include "PrintToFile.h"
 using namespace std;
+
 
 const string fileName = "Players.csv";						//This is where you put the name of the .csv file you want read.
 															//I tried to make it take it as a command line input, but that was too hard
@@ -21,8 +23,8 @@ int main()													//instructions for how the file must be formatted are in 
 	ODivision sortedNA = NA.teamSort(0);
 	cout << "The average sr for NA is "<< NA.getAverageSR() << '\n';
 	cout << "The average sr for Europe is " << europe.getAverageSR() << '\n';
-	sortedNA.printToFile("NA Teams.csv");
-	sortedEurope.printToFile("Europe Teams.csv");
+	printToFile(sortedNA, "NA Teams.csv", NA);
+	printToFile(sortedEurope, "Europe Teams.csv", europe);
     return 0;
 }
 

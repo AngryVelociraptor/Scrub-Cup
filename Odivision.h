@@ -9,6 +9,4 @@ class ODivision
 public:
 	std::string name;
 	std::vector<Team> m_ODivision;
-	bool printToFile();
-	bool printToFile(std::string filename);
 };

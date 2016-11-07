@@ -92,8 +92,8 @@ void parse(Division &europe, Division &NA, int count, string fileName) //Count i
 			NACounter++;
 		}
 	}
-	NA.m_division.resize(NACounter + 1);
+	NA.m_division.resize(NACounter);
 
-	europe.m_division.resize(europeCounter + 1);
+	europe.m_division.resize(europeCounter);
 
 }
