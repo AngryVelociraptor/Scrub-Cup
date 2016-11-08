@@ -17,6 +17,8 @@ int main()													//instructions for how the file must be formatted are in 
 	Division NA("North America");
 	int count = 465;										//the exact number or players in the .csv file.
 	parse(europe, NA, count, fileName);
+	printToFile(europe, "EUPlayers.csv");
+	printToFile(NA, "NAPlayers.csv");
 	NA.tallyRoles();
 	europe.tallyRoles();
 	ODivision sortedEurope = europe.teamSort(0);
@@ -25,6 +27,9 @@ int main()													//instructions for how the file must be formatted are in 
 	cout << "The average sr for Europe is " << europe.getAverageSR() << '\n';
 	printToFile(sortedNA, "NA Teams.csv", NA);
 	printToFile(sortedEurope, "Europe Teams.csv", europe);
+	std::cin.clear(); // reset any error flags
+	std::cin.ignore(32767, '\n'); // ignore any characters in the input buffer until we find an enter character
+	std::cin.get(); // get one more char from the user
     return 0;
 }
 
