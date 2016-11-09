@@ -1,6 +1,6 @@
 #pragma once
 //organized division, into teams.
-#include "Team.h"
+#include "team.h"
 #include <vector>
 #include <string>
 

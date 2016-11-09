@@ -2,10 +2,10 @@
 #include <iostream>
 #include "Player.h"
 #include <string>
-#include "Role.h"
+#include "role.h"
 #include "Division.h"
 using namespace std;
-Division::Division(string name)
+Division::Division(string name) 
 {
 	m_name = name;
 }
@@ -18,7 +18,7 @@ double Division::getAverageSR()
 	}
 	return total / m_division.size();
 }
-int Division::getSR(int index)
+int Division::getSR(int index) 
 {
 	return m_division[index].m_sr;
 }
@@ -65,7 +65,7 @@ vector<int> Division::searchAll(int sr)										//searches for all players with
 		solutions.resize(1);
 		solutions[0] = -1;
 	}
-
+	
 	return solutions;
 }
 bool isIncluded(vector<int> list, int check)
