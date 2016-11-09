@@ -15,21 +15,9 @@ THE MUST BE NO DATA FURTHER DOWN THAN THE PLAYERS
 #include "Role.h"
 #include <fstream>
 #include <iostream>
-#include <algorithm>
 #include "Division.h"
-//#include "stdafx.h"
+#include "stdafx.h"
 using namespace std;
-
-bool isnotprintable(char c) // will need to be modified if unicode is desired
-{
-	return !(c>=0 && c <128 && isprint(static_cast<unsigned char>(c)));
-}
-
-void cleaninput(string &str)
-{
-	str.erase(remove_if(str.begin(), str.end(), isnotprintable), str.end());
-}
-
 void parse(Division &europe, Division &NA, int count, string fileName) //Count is the number of players to process. Filename is that of the .csv file
 {
 	ifstream file(fileName);
@@ -59,18 +47,8 @@ void parse(Division &europe, Division &NA, int count, string fileName) //Count i
 		getline(file, email, ',');
 		getline(file, region, ',');
 		getline(file, srString, ',');
-		getline(file, roleString, ',');
-		getline(file, role2string);
-
-		cleaninput(name);
-		cleaninput(battletag);
-		cleaninput(email);
-		cleaninput(region);
-		cleaninput(srString);
-		cleaninput(roleString);
-		cleaninput(role2string);
-
 		sr = atoi(srString.c_str());
+		getline(file, roleString, ',');
 		if (roleString == "DPS")
 			role = ROLE_DPS;
 		else if (roleString == "Tank")
@@ -81,6 +59,7 @@ void parse(Division &europe, Division &NA, int count, string fileName) //Count i
 			role = ROLE_ANY;
 		else
 			cout << "Something was wrong with the role choice of player number " << i << ". \n";
+		getline(file, role2string);
 		if (role2string == "DPS")
 			role2 = ROLE_DPS;
 		else if (role2string == "Tank")

@@ -1,4 +1,4 @@
-#include "ODivision.h"
+#include "Odivision.h"
 #include <fstream>
 #include <iostream>
 #include "Division.h"
@@ -101,10 +101,10 @@ bool printToFile(ODivision oDivision, std::string filename, Division division)
 				<< division.m_division[i].m_email << ',' << ','
 				<< roleToString(division.m_division[i].m_role) << ','
 				<< roleToString(division.m_division[i].m_role2) << '\n';
-		}
+		}	
 	}
 	outf << "\n\n";
-
+	
 	return true;
 }
 bool printToFile(Division division, std::string filename)
