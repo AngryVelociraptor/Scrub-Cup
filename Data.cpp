@@ -1,11 +1,11 @@
-#include "Odivision.h"
+#include "ODivision.h"
 #include <vector>
 #include <cmath>
 
 double ODivision::getStandardDeviation()
 {
 	double sum = 0;
-	double mean; 
+	double mean;
 	double standardDeviation = 0;
 	for (int i = 0; i < m_ODivision.size(); ++i)
 	{
@@ -59,9 +59,9 @@ double ODivision::getPoorlySortedPcent()
 	{
 		for (int j = 0; j < m_ODivision[i].m_players.size(); ++j)
 		{
-			if ((m_ODivision[i].m_players[j].m_roleSorted != m_ODivision[i].m_players[j].m_role2) 
-				&& (m_ODivision[i].m_players[j].m_role2 != ROLE_ANY) 
-				&& m_ODivision[i].m_players[j].m_roleSorted != m_ODivision[i].m_players[j].m_role 
+			if ((m_ODivision[i].m_players[j].m_roleSorted != m_ODivision[i].m_players[j].m_role2)
+				&& (m_ODivision[i].m_players[j].m_role2 != ROLE_ANY)
+				&& m_ODivision[i].m_players[j].m_roleSorted != m_ODivision[i].m_players[j].m_role
 				&& (m_ODivision[i].m_players[j].m_role != ROLE_ANY))
 				++totalWrong;
 			++total;
