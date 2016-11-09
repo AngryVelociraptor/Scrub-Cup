@@ -13,7 +13,7 @@ for both roles, "I am ok with any role" must be changed to "any" (case sensitive
 THE MUST BE NO DATA FURTHER DOWN THAN THE PLAYERS
 */
 #include <vector>
-#include "player.h"
+#include "Player.h"
 #include "Division.h"
 #include <string>
 void parse(Division &europe, Division &NA, int count, std::string file);
