@@ -1,5 +1,5 @@
 #pragma once
-#include "Odivision.h"
+#include "ODivision.h"
 #include "Division.h"
 #include <string>
 bool printToFile(ODivision oDivision);
